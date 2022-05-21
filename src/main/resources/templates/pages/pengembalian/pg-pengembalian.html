@@ -1,0 +1,94 @@
+<div class="container" xmlns:th="http://www.thymeleaf.org" th:fragment="pengembalian">
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item" th:if="${role == 'ROLE_ADMIN'}">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Pengembalian
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+        <div class="accordion-body">
+          <div id="menu-pengembalian" class="row">
+            <div class="row d-flex justify-content-center">
+              <div class="col-12">
+                <table id="returnTable" class="table table-striped" style="width:100%">
+                  <thead>
+                  <tr>
+                    <th scope="col">Nama Mitra</th>
+                    <th scope="col">No Telp</th>
+                    <th scope="col">No Faktur</th>
+                    <th scope="col">Barang</th>
+                    <th scope="col">Dikembalikan</th>
+                    <th scope="col">Belum Selesai</th>
+                    <th scope="col">Total Barang</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Form Pengembalian
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo">
+        <div class="accordion-body">
+          <div id="form-for-pengembalian" class="row">
+            <div class="row d-flex justify-content-center">
+              <div class="col-md-7 col-lg-8">
+                <h4 class="mb-3 text-primary">Pengembalian</h4>
+                <div class="row g-3">
+
+                  <div class="col-sm-6">
+                    <label for="fr-id_mitra" class="form-label col-form-label-sm mb-0">Mitra</label>
+                    <input onchange="callbackGetFormList(this, 'getFaktur')" class="form-control form-control-plaintext form-control-sm border-0 border-bottom border-danger rounded-0" list="mitraList" id="fr-id_mitra" placeholder="Pilih Mitra" autocomplete="off" required>
+                    <datalist id="mitraList"></datalist>
+                    <div class="invalid-feedback">
+                      Please select a valid country.
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6">
+                    <label for="fr-id_nofaktur" class="form-label col-form-label-sm mb-0">No Faktur</label>
+                    <input onchange="callbackGetPekerjaan(this.value)" class="form-control form-control-plaintext form-control-sm border-0 border-bottom border-danger rounded-0" list="fakturList"  id="fr-id_nofaktur" placeholder="No Faktur" autocomplete="off" required>
+                    <datalist id="fakturList"></datalist>
+                    <div class="invalid-feedback">
+                      Valid first name is required.
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6">
+                    <label for="fr-id_pekerjaan" class="form-label col-form-label-sm mb-0">Pekerjaan</label>
+                    <input onchange="callbackGetJumlah(this)" class="form-control form-control-plaintext form-control-sm border-0 border-bottom border-danger rounded-0" list="pekerjaanList" id="fr-id_pekerjaan" placeholder="Pilih Pekerjaan" autocomplete="off" required>
+                    <datalist id="pekerjaanList"></datalist>
+                    <div class="invalid-feedback">
+                      Valid last name is required.
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6">
+                    <label for="fr-id_jumlah" class="form-label col-form-label-sm mb-0">Jumlah&nbsp;<small id="pekerjaanNote" class="text-danger" style="font-size: .68rem;"></small></label>
+                    <input onchange="callbackCheckJumlah(this)" type="number" class="form-control form-control-plaintext form-control-sm border-0 border-bottom border-danger rounded-0" id="fr-id_jumlah" min="0" placeholder="Jumlah" autocomplete="off" required>
+                    <div class="invalid-feedback">
+                      Valid last name is required.
+                    </div>
+                  </div>
+
+                  <button id="print-pengembalian" class="w-100 btn btn-primary btn-lg d-print-none">Simpan</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

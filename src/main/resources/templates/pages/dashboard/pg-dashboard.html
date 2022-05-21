@@ -1,0 +1,40 @@
+<div class="container" xmlns:th="http://www.thymeleaf.org" th:fragment="dashboard">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="accordion" id="accordionDashboard1">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Dashboard #1
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+            <div class="accordion-body">
+              <div id="dashboard1" class="row">
+                <canvas id="myChart" width="400" height="150"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+              Dashboard #2
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo">
+            <div class="accordion-body">
+              <div id="dashboard2" class="row">
+                <canvas id="secondChart" width="400" height="150"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

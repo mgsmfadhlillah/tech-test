@@ -1,0 +1,15 @@
+<content xmlns:th="http://www.thymeleaf.org" th:fragment="content">
+  <div th:replace="${page == 'dashboard'} ? ~{/pages/dashboard/pg-dashboard :: dashboard} : ~{}"></div>
+  <div th:replace="${page == 'faktur'} ? ~{/pages/faktur/pg-faktur :: faktur} : ~{}"></div>
+  <div th:replace="${page == 'produk'} ? ~{/pages/pg-produk :: produk} : ~{}"></div>
+  <div th:replace="${page == 'mitra'} ? ~{/pages/mitra/pg-mitra :: mitra} : ~{}"></div>
+  <div th:replace="${page == 'mitra-add'} ? ~{/pages/mitra/pg-add-mitra :: mitra} : ~{}"></div>
+  <div th:replace="${page == 'mitra-edit'} ? ~{/pages/mitra/pg-edit-mitra :: edit-mitra} : ~{}"></div>
+
+  <div th:replace="${page == 'pengaturan'} ? ~{/pages/pengaturan/pg-pengaturan :: pengaturan} : ~{}"></div>
+
+  <div th:replace="${page == 'pengembalian'} ? ~{/pages/pengembalian/pg-pengembalian :: pengembalian} : ~{}"></div>
+
+  <div th:replace="${page == 'pembayaran'} ? ~{/pages/pembayaran/pg-pembayaran :: pembayaran} : ~{}"></div>
+
+</content>

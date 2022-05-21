@@ -1,0 +1,49 @@
+<div class="tab-pane fade" id="v-pills-pekerjaan" role="tabpanel" aria-labelledby="v-pills-pekerjaan-tab" xmlns:th="http://www.thymeleaf.org" th:fragment="pengaturan">
+  <h4 class="mb-1 text-primary">Jenis Pekerjaan</h4>
+  <div class="row g-3">
+
+    <div class="col-sm-6">
+      <div class="row g-5">
+        <div class="col-12">
+          <h5 class="my-3 text-primary border-bottom border-2 border-danger">List</h5>
+          <table id="jenis_pekerjaanTable" class="table table-striped" style="width:100%">
+            <thead>
+            <tr>
+              <th scope="col">Nama Pekerjaan</th>
+              <th scope="col">Kode Pekerjaan</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <h5 class="my-3 text-primary border-bottom border-2 border-danger">Tambah Pekerjaan</h5>
+
+      <div class="row">
+        <form id="form-jenis_pekerjaan" class="needs-validation" novalidate>
+          <div class="col-12 mb-3">
+            <label for="fr-id_namapekerjaan" class="form-label">Nama Pekerjaan</label>
+            <input type="text" class="form-control" name="nama_pekerjaan" id="fr-id_namapekerjaan" placeholder="Nama Pekerjaan" required>
+            <div class="invalid-feedback">
+              Valid Nama Pekerjaan is required.
+            </div>
+          </div>
+
+          <div class="col-12 mb-3">
+            <label for="fr-id_kodepekerjaan" class="form-label">Kode Pekerjaan</label>
+            <input type="text" class="form-control" name="kode_pekerjaan" id="fr-id_kodepekerjaan" placeholder="Kode Pekerjaan" required>
+            <div class="invalid-feedback">
+              Valid Kode Pekerjaan is required.
+            </div>
+          </div>
+
+          <button id="btn-submit-jenis-pekerjaan-new" onclick="submitCnf('pekerjaan')" class="w-100 btn btn-primary btn-lg" type="button">Simpan</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

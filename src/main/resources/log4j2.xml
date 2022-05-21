@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration>
+    <Properties>
+        <Property name="TELKOMSEL_PATTERN">
+            %d{yyyy-MM-dd HH:mm:ss}|%msg%n
+        </Property>
+        <Property name="DIR_LOG">
+            ./logs/
+        </Property>
+    </Properties>
+    <Loggers>
+        <Logger level="INFO" name="TELKOMSEL_Logger" additivity="false">
+            <AppenderRef ref="RollingFileAppender"/>
+        </Logger>
+        <Logger level="DEBUG" name="Debug_Log" additivity="false">
+            <AppenderRef ref="DebugAppender" />
+        </Logger>
+        <Root level="INFO">
+            <AppenderRef ref="DebugAppender"/>
+        </Root>
+    </Loggers>
+    <Appenders>
+        <RollingFile name="RollingFileAppender" fileName="${DIR_LOG}/telkomsel.gw.log" filePattern="${DIR_LOG}/telkomsel.gw.log.%d{dd-MM-yyyy}.log">
+            <PatternLayout>
+                <Pattern>
+                    ${TELKOMSEL_PATTERN}
+                </Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" />
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="DebugAppender" fileName="${DIR_LOG}/debug.log" filePattern="${DIR_LOG}/debug-%d{MM-dd-yy}-%i.log.gz">
+            <PatternLayout>
+                <Pattern>
+                    ${TELKOMSEL_PATTERN}
+                </Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="100 MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="5" />
+        </RollingFile>
+    </Appenders>
+</Configuration>

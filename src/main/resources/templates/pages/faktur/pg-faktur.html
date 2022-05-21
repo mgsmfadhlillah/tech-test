@@ -1,0 +1,89 @@
+<div class="container" xmlns:th="http://www.thymeleaf.org" th:fragment="faktur">
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item" th:if="${role == 'ROLE_ADMIN'}">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          History Pekerjaan
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+        <div class="accordion-body">
+          <div id="menu-faktur" class="row">
+            <nav class="nav nav-pills mb-3 flex-column flex-sm-row" id="pills-tab" role="tablist"></nav>
+            <div class="tab-content" id="pills-tabContent"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Form Faktur
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo">
+        <div class="accordion-body">
+          <div id="form-for-faktur" class="row">
+            <div class="row">
+              <div class="col-md-5 col-lg-4 order-sm-last">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="text-primary">Check Out</span>
+                  <span id="badge-counter" class="badge bg-primary rounded-pill visually-hidden">30</span>
+                </h4>
+                <form id="form-checkout">
+                  <ul id="listCheckOut" class="list-group mb-3">
+                    <li id="btn-add-faktur" class="list-group-item d-flex justify-content-center py-0 bg-success text-white lh-sm btn mb-1 d-print-none">
+                      Tambah
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between bg-primary text-white">
+                      <span>Total</span>
+                      <strong id="grand-total">Rp. 0,-</strong>
+                      <input type="hidden" id="hidden-gt"/>
+                    </li>
+                  </ul>
+                </form>
+              </div>
+              <div class="col-md-7 col-lg-8">
+                <h4 class="mb-3 text-primary">Faktur</h4>
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <label for="fr-id_nofaktur" class="form-label col-form-label-sm mb-0">No Faktur</label>
+                    <input type="text" readonly class="form-control-plaintext form-control-sm" id="fr-id_nofaktur">
+                    <div class="invalid-feedback">
+                      Valid first name is required.
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6">
+                    <label for="ui-slct_pekerjaan" class="form-label col-form-label-sm mb-0">Jenis Pekerjaan</label>
+                    <select id="ui-slct_pekerjaan" class="form-select form-select-sm" onchange="selectPekerjaan(this)">
+                      <option selected>Pilih Pekerjaan</option>
+                    </select>
+<!--                    <input type="hidden" readonly class="form-control-plaintext form-control-sm" id="fr-id_pekerjaan">-->
+<!--                    <input type="text" readonly class="form-control-plaintext form-control-sm" id="ui-id_pekerjaan">-->
+                    <div class="invalid-feedback">
+                      Valid last name is required.
+                    </div>
+                  </div>
+
+                  <div class="col-sm-12">
+                    <label for="fr-id_mitra" class="form-label col-form-label-sm mb-0">Mitra</label>
+                    <input class="form-control form-control-plaintext form-control-sm d-print-block border-0 border-bottom border-danger rounded-0" list="mitraList" id="fr-id_mitra" placeholder="Pilih Mitra" autocomplete="off" required>
+                    <datalist id="mitraList"></datalist>
+                    <div class="invalid-feedback">
+                      Please select a valid country.
+                    </div>
+                  </div>
+
+                  <button id="print-faktur" class="w-100 btn btn-primary btn-lg d-print-none">Print</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="printArea"></div>
+</div>

@@ -1,0 +1,35 @@
+<div class="container" xmlns:th="http://www.thymeleaf.org" th:fragment="pengaturan">
+  <div class="row gap-5">
+    <div class="row mt-5">
+      <h4 class="mb-3 text-primary">Pengaturan</h4>
+
+      <div class="">
+        <nav class="mb-2">
+          <div class="nav nav-tabs me-3" id="v-pills-tab" role="tablist" aria-orientation="horizontal">
+            <button class="d-flex justify-content-between nav-link active" id="v-pills-bahan-tab" data-bs-toggle="pill" data-bs-target="#v-pills-bahan" type="button" role="tab" aria-controls="v-pills-bahan" aria-selected="true">
+              <span class="badge rounded-pill bg-warning text-dark">1</span>Bahan&nbsp;
+            </button>
+            <button class="d-flex justify-content-between nav-link" id="v-pills-ukuran-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ukuran" type="button" role="tab" aria-controls="v-pills-ukuran" aria-selected="false">
+              <span class="badge rounded-pill bg-warning text-dark">2</span>Ukuran&nbsp;
+            </button>
+            <button class="d-flex justify-content-between nav-link" id="v-pills-pekerjaan-tab" data-bs-toggle="pill" data-bs-target="#v-pills-pekerjaan" type="button" role="tab" aria-controls="v-pills-pekerjaan" aria-selected="false">
+              <span class="badge rounded-pill bg-warning text-dark">3</span>Jenis Pekerjaan
+            </button>
+            <button class="d-flex justify-content-between nav-link" id="v-pills-upah-tab" data-bs-toggle="pill" data-bs-target="#v-pills-upah" type="button" role="tab" aria-controls="v-pills-upah" aria-selected="false">
+              <span class="badge rounded-pill bg-warning text-dark">4</span>Upah&nbsp;
+            </button>
+          </div>
+        </nav>
+        <div class="tab-content w-100" id="v-pills-tabContent">
+          <div th:replace="~{/pages/pengaturan/ctn-pengaturan-bahan :: pengaturan}"></div>
+
+          <div th:replace="~{/pages/pengaturan/ctn-pengaturan-ukuran :: pengaturan}"></div>
+
+          <div th:replace="~{/pages/pengaturan/ctn-pengaturan-pekerjaan :: pengaturan}"></div>
+
+          <div th:replace="~{/pages/pengaturan/ctn-pengaturan-upah :: pengaturan}"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

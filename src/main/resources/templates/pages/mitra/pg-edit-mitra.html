@@ -1,0 +1,56 @@
+<div class="container" xmlns:th="http://www.thymeleaf.org" th:fragment="edit-mitra">
+    <div class="row">
+        <div class="d-flex justify-content-start">
+            <a th:href="@{/mitra}" class="btn btn-primary">List Mitra</a>
+        </div>
+        <div class="row g-5">
+            <form id="form-add-mitra" class="needs-validation">
+                <input type="hidden" id="inputId" name="inputId">
+                <div class="col-12">
+                    <label for="fullname" class="form-label">Nama Lengkap</label>
+                    <input type="text" class="form-control" id="fullname" name="inputNama" placeholder="" th:value="" required="">
+                    <div class="invalid-feedback">
+                        Valid fullname is required.
+                    </div>
+                </div>
+                <div class="col-12">
+                    <label for="phone" class="form-label">Nomor Telp</label>
+                    <input type="text" class="form-control" id="phone" name="inputPhone" placeholder="" th:value="" required="">
+                    <div class="invalid-feedback">
+                        Valid phone number is required.
+                    </div>
+                </div>
+                <div class="col-12">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="inputEmail" placeholder="" th:value="" required="">
+                    <div class="invalid-feedback">
+                        Valid email is required.
+                    </div>
+                </div>
+                <div class="col-12">
+                    <label for="address" class="form-label">Alamat</label>
+                    <input type="text" class="form-control" id="address" name="inputAlamat" placeholder="" th:value="" required="">
+                    <div class="invalid-feedback">
+                        Valid address is required.
+                    </div>
+                </div>
+                <div class="col-12">
+                    <input type="hidden" class="form-control" id="type" name="inputType" value="M">
+                    <button id="btn-submit-new" type="button" class="btn btn-primary mt-3">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div id="form-loading" class="loading-overlay visually-hidden">
+        <div class="middle-overlay">
+            <div class="d-flex justify-content-center">
+                <div class="d-flex align-items-center text-warning">
+                    <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+                    <strong>Loading...</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

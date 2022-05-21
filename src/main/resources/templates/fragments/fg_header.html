@@ -1,0 +1,66 @@
+<header xmlns:th="http://www.thymeleaf.org" th:fragment="header">
+  <div class="px-3 py-2 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+          <li>
+            <a href="#" class="nav-link" th:classappend="${page == 'home'} ? 'text-secondary' : 'text-white'">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
+              Home
+            </a>
+          </li>
+          <li th:if="${role == 'ROLE_ADMIN'}">
+            <a th:href="@{/dashboard}" class="nav-link" th:classappend="${page == 'dashboard'} ? 'text-secondary' : 'text-white'">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"/></svg>
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a th:href="@{/faktur}" class="nav-link" th:classappend="${page == 'faktur'} ? 'text-secondary' : 'text-white'">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
+              Faktur
+            </a>
+          </li>
+          <li>
+            <a th:href="@{/pengembalian}" class="nav-link" th:classappend="${page == 'pengembalian'} ? 'text-secondary' : 'text-white'">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#bi-arrow-left-right"/></svg>
+              Pengembalian
+            </a>
+          </li>
+          <li>
+            <a th:href="@{/pembayaran}" class="nav-link" th:classappend="${page == 'pembayaran'} ? 'text-secondary' : 'text-white'">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#bi-cash"/></svg>
+              Pembayaran
+            </a>
+          </li>
+          <li th:if="${role == 'ROLE_ADMIN'}">
+            <a th:href="@{/mitra}" class="nav-link" th:classappend="${page == 'mitra'} ? 'text-secondary' : 'text-white'">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
+              Mitra
+            </a>
+          </li>
+          <li th:if="${role == 'ROLE_ADMIN'}">
+            <a th:href="@{/pengaturan}" class="nav-link" th:classappend="${page == 'pengaturan'} ? 'text-secondary' : 'text-white'">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#gear-wide-connected"/></svg>
+              Pengaturan
+            </a>
+          </li>
+          <li>
+            <a th:href="@{/do/logout}" class="nav-link text-white">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#bi-box-arrow-right"/></svg>
+              Keluar
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="px-3 py-2 border-bottom mb-3">
+    <div class="container d-flex flex-wrap justify-content-center">
+    </div>
+  </div>
+</header>

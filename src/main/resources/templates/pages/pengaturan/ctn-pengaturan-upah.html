@@ -1,0 +1,65 @@
+<div class="tab-pane fade" id="v-pills-upah" role="tabpanel" aria-labelledby="v-pills-upah-tab" xmlns:th="http://www.thymeleaf.org" th:fragment="pengaturan">
+  <h4 class="mb-1 text-primary">Upah</h4>
+  <div class="row g-3">
+
+    <div class="col-sm-6">
+      <div class="row g-5">
+        <div class="col-12">
+          <h5 class="my-3 text-primary border-bottom border-2 border-danger">List</h5>
+          <table id="pekerjaanTable" class="table table-striped" style="width:100%">
+            <thead>
+            <tr>
+              <th scope="col">Nama Pekerjaan</th>
+              <th scope="col">Ukuran</th>
+              <th scope="col">Upah</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <h5 class="my-3 text-primary border-bottom border-2 border-danger">Tambah Upah</h5>
+
+      <div class="row">
+        <form id="form-upah" class="needs-validation" novalidate>
+          <div class="col-12 mb-3">
+            <label for="fr-slct_upahpekerjaan" class="form-label">Nama Pekerjaan</label>
+            <select name="id_pekerjaan"  id="fr-slct_upahpekerjaan" class="form-select">
+              <option selected>Pilih Pekerjaan</option>
+            </select>
+<!--            <input type="text" class="form-control" name="id_pekerjaan" id="fr-id_upahpekerjaan" placeholder="Nama Pekerjaan" required>-->
+            <div class="invalid-feedback">
+              Valid Nama Pekerjaan is required.
+            </div>
+          </div>
+
+          <div class="col-12 mb-3">
+            <label for="fr-slct_upahukuran" class="form-label">Ukuran</label>
+            <select name="id_ukuran"  id="fr-slct_upahukuran" class="form-select">
+              <option selected>Pilih Ukuran</option>
+            </select>
+<!--            <input type="text" class="form-control" name="id_ukuran" id="fr-id_upahukuran" placeholder="Ukuran" required>-->
+            <div class="invalid-feedback">
+              Valid Ukuran is required.
+            </div>
+          </div>
+
+          <div class="col-12 mb-3">
+            <label for="fr-id_upahharga" class="form-label">Harga</label>
+            <input type="text" class="form-control" id="fr-id_upahharga" placeholder="Harga" required>
+            <input type="hidden" class="form-control" name="harga_upah" id="hd-id_jumlah" required>
+            <div class="invalid-feedback">
+              Valid Harga is required.
+            </div>
+          </div>
+
+          <button id="btn-submit-upah-new" onclick="submitCnf('upah')" class="w-100 btn btn-primary btn-lg" type="button">Simpan</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
